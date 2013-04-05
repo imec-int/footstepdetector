@@ -63,31 +63,12 @@ function pageLoaded(){
 
 }
 
-function draw(timeData){
-	var timeLength = timeData.length;
-	var c = ctx;
-
-	//bg
-	c.fillStyle="#EEEEEE";
-	c.fillRect(0,0,cv.width,cv.height);
-
-	// scale time data
-	//timeData = 128 + (timeData-128)*4;
-
-	for (var i = 0; i < timeLength; i++) {
-		c.fillStyle="#FF0000";
-		c.fillRect(i, 256-timeData[i],1,1);
-	};
-}
-
-
 var x = 0;
 function drawPoint(value){
 	ctx.fillStyle="#FF0000";
 	ctx.fillRect(x, cv.height/2-(value*100), 1, 1);
 	x = x + 0.001;
 }
-
 
 $(pageLoaded); //jQuery onload
 
